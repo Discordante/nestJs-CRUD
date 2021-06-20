@@ -10,17 +10,24 @@ import {
 
 import { CreateNoteDto } from './dto/create-note.dto';
 import { UpdateNoteDto } from './dto/update-note.dto';
+import { NotesService } from './notes.service';
 
 @Controller('notes')
 export class NotesController {
+  constructor(private readonly noteService: NotesService) {}
   @Get()
   getAllNotes(): string {
-    return `All notes`;
+    return this.noteService.getAllNotes();
+  }
+
+  @Get(':id')
+  getNote(@Param('id') noteId: string): string {
+    return this.noteService.getNote(noteId);
   }
 
   @Post()
   createNote(@Body() noteDto: CreateNoteDto): string {
-    return `New note created ${noteDto.title}`;
+    return this.noteService.createNote(noteDto);
   }
 
   @Put(':id')
@@ -28,11 +35,11 @@ export class NotesController {
     @Param('id') noteId: string,
     @Body() noteDto: UpdateNoteDto,
   ): string {
-    return `Note updated ${noteDto.title}`;
+    return this.noteService.updateNote(noteId, noteDto);
   }
 
   @Delete(':id')
   deleteNote(@Param('id') noteId: string): string {
-    return `Note deleted ${noteId}`;
+    return this.noteService.deleteNote(noteId);
   }
 }
