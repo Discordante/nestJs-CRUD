@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Note } from './interfaces/note.interface';
+import { NoteI } from './interfaces/note.interface';
 
 @Injectable()
 export class NotesService {
@@ -7,19 +7,19 @@ export class NotesService {
     return `All notes`;
   }
 
-  getNote() {
+  getNote(id: string) {
     return `Get one note`;
   }
 
-  createNote() {
+  createNote(note: NoteI) {
     return `New note created`;
   }
 
-  updateNote() {
+  updateNote(id: string, note: NoteI) {
     return `New note updated`;
   }
 
-  deleteNote() {
+  deleteNote(id: string) {
     return `Note deleted`;
   }
 }
