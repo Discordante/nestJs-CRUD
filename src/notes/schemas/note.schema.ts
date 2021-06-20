@@ -9,7 +9,7 @@ export class Note {
   title: string;
 
   @Prop({ required: true })
-  description: number;
+  description: string;
 
   @Prop({ default: false })
   favourite: boolean;
