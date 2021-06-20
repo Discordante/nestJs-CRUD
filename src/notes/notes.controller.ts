@@ -9,6 +9,7 @@ import {
 } from '@nestjs/common';
 
 import { CreateNoteDto } from './dto/create-note.dto';
+import { UpdateNoteDto } from './dto/update-note.dto';
 
 @Controller('notes')
 export class NotesController {
@@ -23,8 +24,11 @@ export class NotesController {
   }
 
   @Put(':id')
-  updateNote(@Param('id') noteId: string): string {
-    return `Note updated ${noteId}`;
+  updateNote(
+    @Param('id') noteId: string,
+    @Body() noteDto: UpdateNoteDto,
+  ): string {
+    return `Note updated ${noteDto.title}`;
   }
 
   @Delete(':id')
