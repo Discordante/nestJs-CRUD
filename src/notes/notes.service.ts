@@ -1,25 +1,29 @@
 import { Injectable } from '@nestjs/common';
 import { NoteI } from './interfaces/note.interface';
+import { Model } from 'mongoose';
+import { InjectModel } from '@nestjs/mongoose';
 
 @Injectable()
 export class NotesService {
-  getAllNotes() {
-    return `All notes`;
+  constructor(@InjectModel('Note') private readonly noteModel: Model<NoteI>) {}
+  async getAllNotes(): Promise<NoteI[]> {
+    return await this.noteModel.find();
   }
 
-  getNote(id: string) {
-    return `Get one note`;
+  async getNote(id: string): Promise<NoteI> {
+    return await this.noteModel.findById(id);
   }
 
-  createNote(note: NoteI) {
-    return `New note created`;
+  async createNote(note: NoteI): Promise<NoteI> {
+    const newNote = new this.noteModel(note);
+    return await newNote.save();
   }
 
-  updateNote(id: string, note: NoteI) {
-    return `New note updated`;
+  async updateNote(id: string, note: NoteI): Promise<NoteI> {
+    return await this.noteModel.findByIdAndUpdate(id, note, { new: true });
   }
 
-  deleteNote(id: string) {
-    return `Note deleted`;
+  async deleteNote(id: string): Promise<NoteI> {
+    return await this.noteModel.findByIdAndDelete(id);
   }
 }
