@@ -8,6 +8,8 @@ import {
   Param,
 } from '@nestjs/common';
 
+import { CreateNoteDto } from './dto/create-note.dto';
+
 @Controller('notes')
 export class NotesController {
   @Get()
@@ -16,8 +18,8 @@ export class NotesController {
   }
 
   @Post()
-  createNote(): string {
-    return `New note created`;
+  createNote(@Body() noteDto: CreateNoteDto): string {
+    return `New note created ${noteDto.title}`;
   }
 
   @Put(':id')
