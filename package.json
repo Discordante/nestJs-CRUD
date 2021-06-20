@@ -1,8 +1,8 @@
 {
   "name": "nest-js-crud",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Nestjs basic CRUD with typescript",
+  "author": "Diego Cerratos Bravo",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
