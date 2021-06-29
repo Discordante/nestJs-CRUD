@@ -6,7 +6,9 @@
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
 <a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" ## Installation
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" 
+                                                                                     
+## Installation
 
 ```bash
 $ npm install
@@ -40,8 +42,8 @@ $ npm run test:cov
 
 ## Stay in touch
 
-- Author - [Diego Cerratos Bravo](https://kamilmysliwiec.com)
-- Website - [https://dcbravo.com](http://dcbravo.com)
+- Author - Diego Cerratos Bravo
+- Website - [https://dcbravo.com](http://www.dcbravo.com)
 
 ## License
 
